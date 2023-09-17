@@ -1,9 +1,9 @@
 import * as React from "react";
 import { Switch, Route } from "react-router-dom";
-import Home from "./Components/Home";
-import ProductDetail from "./Components/ProductDetail";
-import Products from "./Components/Products";
-import Navbar from "./Components/Navbar";
+import Home from "./Components/Home/Home";
+import ProductDetail from "./Components/Products/ProductDetail";
+import Products from "./Components/Products/Products";
+import Navbar from "./Components/Navbar/Navbar";
 
 export default function App() {
   const [theme, setTheme] = React.useState(() => {

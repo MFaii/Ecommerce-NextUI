@@ -38,35 +38,15 @@ const Navbarr = ({ theme, toggleTheme }) => {
         </NavbarBrand>
       </NavbarContent>
 
-      {/* <NavbarContent className="hidden sm:flex gap-4" justify="center">
-        <NavbarItem>
-          <Link color="foreground" href="#">
-            Home
-          </Link>
-        </NavbarItem>
-        <NavbarItem>
-          <Link href="#" color="foreground">
-            Products
-          </Link>
-        </NavbarItem>
-        <NavbarItem>
-          <Link color="foreground" href="#">
-            Cart
-          </Link>
-        </NavbarItem>
-      </NavbarContent> */}
       <NavbarContent justify="end">
-        {/* <NavbarItem className="hidden lg:flex">
-          <Link href="#">Login</Link>
-        </NavbarItem> */}
-        <NavbarItem>
+        <NavbarItem className="flex gap-4">
           <Button onClick={toggleTheme}>Toggle Theme</Button>
-
           <Button as={Link} href="#">
-            Sign Up
+            Enter Account
           </Button>
         </NavbarItem>
       </NavbarContent>
+
       <NavbarMenu>
         {menuItems.map((item, index) => (
           <NavbarMenuItem key={`${item}-${index}`}>

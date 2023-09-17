@@ -35,7 +35,7 @@ const Products = () => {
     return (
       <>
         <div className="flex flex-wrap justify-center gap-4">
-          <ButtonGroup>
+          <ButtonGroup className="flex flex-wrap justify-center gap-4">
             <Button variant="faded" onClick={() => setFilter(data)}>
               All
             </Button>

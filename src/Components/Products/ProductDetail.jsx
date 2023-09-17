@@ -21,15 +21,8 @@ const ProductDetail = () => {
     fetchProduct();
   }, [id]);
   const ShowProductDetail = () => {
-    if (!product) {
-      return <div>Loading...</div>;
-    }
-
     return (
-      <div
-        className="flex flex-wrap justify-center gap-4
-      p-4"
-      >
+      <div className="flex flex-wrap justify-center items-center h-screen">
         <div className="fixedCard">
           <img src={product.image} alt={product.title} />
         </div>
@@ -40,15 +33,18 @@ const ProductDetail = () => {
           <Button color="primary" variant="ghost">
             Add to Cart <AiOutlineShoppingCart />
           </Button>
+          <NavLink to="/products">
+            <Button color="secondary" variant="ghost">
+              Back to Products
+            </Button>
+          </NavLink>
         </div>
       </div>
     );
   };
   return (
     <>
-      <div>
-        <ShowProductDetail />
-      </div>
+      <ShowProductDetail />
     </>
   );
 };
