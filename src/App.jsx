@@ -8,10 +8,8 @@ import SignIn from "./Components/Auth/SignIn/SignIn";
 
 export default function App() {
   const [theme, setTheme] = React.useState(() => {
-    /* if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
-      return "dark";
-    } */
-    return "light";
+    const storedTheme = localStorage.getItem("theme");
+    return storedTheme || "light";
   });
   const [user, setUser] = React.useState(null);
 
@@ -25,6 +23,7 @@ export default function App() {
     } else {
       document.documentElement.classList.remove("dark");
     }
+    localStorage.setItem("theme", theme);
   }, [theme]);
   return (
     <>
