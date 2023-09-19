@@ -5,6 +5,7 @@ import ProductDetail from "./Components/Products/ProductDetail";
 import Products from "./Components/Products/Products";
 import Navbar from "./Components/Navbar/Navbar";
 import SignIn from "./Components/Auth/SignIn/SignIn";
+import Cart from "./Components/Cart/Cart";
 
 export default function App() {
   const [theme, setTheme] = React.useState(() => {
@@ -25,6 +26,7 @@ export default function App() {
     }
     localStorage.setItem("theme", theme);
   }, [theme]);
+
   return (
     <>
       <Navbar theme={theme} toggleTheme={toggleTheme} user={user} />
@@ -39,6 +41,7 @@ export default function App() {
             <SignIn {...props} setUser={setUser} user={user} />
           )}
         />
+        <Route exact path="/cart" component={Cart} />
       </Switch>
     </>
   );

@@ -11,20 +11,25 @@ const Products = () => {
   const [data, setData] = React.useState([]);
   const [filter, setFilter] = React.useState(data);
 
-  let componentMounted = true;
-
   useEffect(() => {
+    let componentMounted = true;
+
     const getProducts = async () => {
       const response = await fetch("https://fakestoreapi.com/products");
+
       if (componentMounted) {
-        setData(await response.clone().json());
-        setFilter(await response.json());
+        const responseData = await response.json();
+        setData(responseData);
+        setFilter(responseData);
+        localStorage.setItem("products", JSON.stringify(responseData));
       }
-      return () => {
-        componentMounted = false;
-      };
     };
+
     getProducts();
+
+    return () => {
+      componentMounted = false;
+    };
   }, []);
 
   const filterProduct = (cat) => {

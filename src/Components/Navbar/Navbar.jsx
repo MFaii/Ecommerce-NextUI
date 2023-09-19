@@ -58,7 +58,7 @@ const Navbarr = ({ theme, toggleTheme, user }) => {
               src={JSON.parse(localStorage.getItem("user")).photoURL}
             />
           ) : (
-            <Button as={Link} href="/login">
+            <Button as={Link} href="/login" variant="bordered">
               Enter Account
             </Button>
           )}
