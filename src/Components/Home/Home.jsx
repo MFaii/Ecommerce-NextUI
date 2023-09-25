@@ -1,10 +1,10 @@
 import React from "react";
-import Products from "../Products/Products";
+import Landing from "../Landing/Landing";
 
 const Home = () => {
   return (
     <>
-      <Products />
+      <Landing />
     </>
   );
 };
